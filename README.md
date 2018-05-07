@@ -16,7 +16,7 @@ El código aplicará un reconocimiento de caracteres sobre un rectángulo de cie
 * `<whitelist>`: caracteres a reconocer en el zonal OCR, es decir, caracteres que pueden existir en dicho rectángulo de la imagen. Por ejemplo: si en una zona solo se espera que haya números, se le pasará como whitelist una cadena con los posibles dígitos: "0123456789".
 * `<left>`: píxeles desde la izquierda de la imagen hasta la esquina superior izquierda del rectángulo (a una densidad de 200).
 * `<top>`: píxeles desde la parte superior de la imagen hasta la esquina superior izquierda del rectángulo (a una densidad de 200).
-* `<width>`: ancho del rectángulo (a una densidad de 200).
-* `<height>`: alto del rectángulo (a una densidad de 200).
+* `<width>`: píxeles de ancho del rectángulo (a una densidad de 200).
+* `<height>`: píxeles de alto del rectángulo (a una densidad de 200).
 
 Las coordenadas serán las correspondientes a la imagen con una densidad de 200. Esto se debe a que las coordenadas de la plantilla de la factura se habrán guardado en nuestra base de datos con esa densidad. En el [código del bot](https://github.com/javierdemartin/facturbot-bot) se hará primero una consulta a la [base de datos](https://github.com/javierdemartin/facturbot-db) para obtener dichas coordenadas e insertarlas como parámetro en la ejecución de la aplicación de zonal OCR. Como la imagen a analizar se ha podido obtener con una densidad mayor, en el código se hace un escalado de `<densidad> / 200` para obtener las coordenadas correspondientes.
